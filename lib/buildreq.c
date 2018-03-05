@@ -216,6 +216,8 @@ int rc_aaa_async (rc_handle *rh, uint32_t client_port, VALUE_PAIR *send, VALUE_P
 		aaaserver = (*ctx)->aaaserver;
 		data = *((*ctx)->data);
 		skip_count = (*ctx)->skip_count;
+		adt_vp = (*ctx)->adt_vp;
+		type = (*ctx)->type;
 
 		/* resume from the next destination */
 		(*ctx)->idx++;
@@ -276,6 +278,7 @@ int rc_aaa_async (rc_handle *rh, uint32_t client_port, VALUE_PAIR *send, VALUE_P
 		(*ctx)->data			= (SEND_DATA *)(*ctx + 1);
 		(*ctx)->msg				= msg;
 		(*ctx)->idx				= 0;
+		(*ctx)->adt_vp				= adt_vp;
 
 		skip_count = 0;
 	}
@@ -314,7 +317,6 @@ int rc_aaa_async (rc_handle *rh, uint32_t client_port, VALUE_PAIR *send, VALUE_P
 		if (result == OK_RC) {
 			(*ctx)->type			= type;
 			(*ctx)->start_time		= start_time;
-			(*ctx)->adt_vp			= adt_vp;
 			(*ctx)->aaaserver		= aaaserver;
 
 			return result;
@@ -361,7 +363,6 @@ int rc_aaa_async (rc_handle *rh, uint32_t client_port, VALUE_PAIR *send, VALUE_P
 	if (result == OK_RC) {
 		(*ctx)->type			= type;
 		(*ctx)->start_time		= start_time;
-		(*ctx)->adt_vp			= adt_vp;
 		(*ctx)->aaaserver		= aaaserver;
 
 		return result;

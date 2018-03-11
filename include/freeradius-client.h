@@ -50,14 +50,13 @@
 #endif
 
 #define AUTH_VECTOR_LEN		16
-#define AUTH_PASS_LEN		(3 * 16) /* multiple of 16 */
+#define AUTH_PASS_LEN		(7 * 16) /* multiple of 16 */
 #define AUTH_ID_LEN		64
 #define AUTH_STRING_LEN		253	 /* maximum of 253 */
 
 #define BUFFER_LEN		8192
 
 #define NAME_LENGTH		32
-#define GETSTR_LENGTH		128	//!< must be bigger than AUTH_PASS_LEN.
 
 #define MAX_SECRET_LENGTH	(3 * 16) /* MUST be multiple of 16 */
 
@@ -106,7 +105,7 @@ struct rc_conf
 	struct dict_attr	*dictionary_attributes;
 	struct dict_value	*dictionary_values;
 	struct dict_vendor	*dictionary_vendors;
-	char			buf[GETSTR_LENGTH];
+	char			buf[256];
 	char			buf1[14];
 	char			ifname[512];
 };

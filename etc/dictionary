@@ -126,6 +126,11 @@ ATTRIBUTE	Error-Cause		101	integer
 ATTRIBUTE	EAP-Key-Name		102	string
 
 #
+#	RFC4818
+#
+ATTRIBUTE	Delegated-IPv6-Prefix	123	ipv6prefix
+
+#
 #	RFC6911 IPv6 attributes
 #
 ATTRIBUTE	Framed-IPv6-Address	168	ipv6addr

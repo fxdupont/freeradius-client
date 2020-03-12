@@ -246,6 +246,8 @@ typedef struct rc_conf rc_handle;
 #define PW_ERROR_CAUSE			101	//!< integer.
 #define PW_EAP_KEY_NAME			102	//!< string.
 
+#define PW_DELEGATED_IPV6_PREFIX	123	//!< string.
+
 #define PW_FRAMED_IPV6_ADDRESS		168	//!< ipaddr6.
 #define PW_DNS_SERVER_IPV6_ADDRESS	169	//!< ipaddr6.
 #define PW_ROUTE_IPV6_INFORMATION	170	//!< ipv6prefix.
